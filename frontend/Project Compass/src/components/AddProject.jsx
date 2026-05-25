@@ -273,7 +273,7 @@ function AddProject() {
 
                 </div>
 
-                <button type="submit" onClick={newProject}>
+                <button type="submit" onClick={newProject} className="update-btn">
                     Add Project
                 </button>
             </form>

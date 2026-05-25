@@ -289,7 +289,7 @@ function EditProject() {
 
                 </div>
 
-                <button type="submit" onClick={updateProject}>
+                <button type="submit" onClick={updateProject} className="update-btn">
                     Update Project
                 </button>
             </form>

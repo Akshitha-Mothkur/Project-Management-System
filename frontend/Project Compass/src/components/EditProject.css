@@ -125,10 +125,12 @@
 .task-box{
     display: flex;
     flex-direction: column;
-    gap:15px;
-    width: 400px;
-   border: 1px solid;
+    gap:5px;
+    width: 370px;
+   border: 1px solid rgba(84, 82, 82, 0.716);
+   border-radius: 19px;
    padding: 10px;
+   margin-bottom: 15px;
 }
 
 
@@ -149,4 +151,24 @@
     width: 16px;
     height: 16px;
     margin: 0;
+}
+.add-btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.add-btn svg{
+    font-size: 40px;
+    
+}
+.update-btn{
+    
+    margin-left: 300px;
+    width: 200px;
+    text-align: center;
 }
