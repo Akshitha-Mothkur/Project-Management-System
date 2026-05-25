@@ -1,0 +1,49 @@
+.outer{
+    padding: 15px;
+    margin: 20px;
+}
+
+.inner{
+   display: flex; 
+   justify-content: center;
+   text-align: left;
+   margin-top: 20px;
+   gap:50px;
+   
+}
+
+.dash{
+    text-align: left;
+    font-weight: 600;
+    padding-left: 70px;
+}
+
+.total,.completed,.progess, .overdue{
+    border: 2px solid;
+    width:175px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+h3{
+    margin-top: 2px;
+}
+
+.total {
+    color:#bb71f4 ;
+    background-color: #bb71f430;
+}
+.completed {
+    color: #60ea60 ;
+    background-color: #169f1653;
+}
+.progess {
+    color:#34acf2 ;
+    background-color:#27c6fb33;
+}
+.overdue{
+    color:orangered;
+    background-color:rgba(255, 68, 0, 0.219);
+}
+
+

@@ -1,0 +1,131 @@
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.searchbar input{
+    width: 450px;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    background-color:#27272c;
+    border-radius: 19px;
+    font-size: 16px;   
+}
+
+.searchbar svg{
+    font-size: 30px;
+    cursor: pointer;
+    color: #bb71f4;
+}
+
+.my-projects{
+    margin-top: 25px;
+}
+.project-card{
+    border: 1px solid #bb71f4;
+    border-radius: 19px; margin: 25px 75px ;padding: 30px;
+
+    
+}
+.project-card .top-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.project-card .left{
+    text-align: left;
+    padding-left: 40px;
+}
+
+
+.project-card .left .but{
+    display: flex;
+    gap:30px;
+    margin-top: 15px;
+    align-items: center;
+
+}
+
+.left .but svg{
+    color: #bb71f4;
+    font-size: 20px;
+   
+}
+.project-card .left .date span{
+    color:white;
+    font-size: 14px ;
+
+}
+
+.project-card .left h3{
+    color: white;
+    margin-bottom: 7px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.project-card .left .tech {
+    margin-left: 10px;
+    padding: 8.5px;
+    border: 1px solid;
+    border-color: #f2eef6;
+    background-color: transparent;
+    border-radius: 5px;
+    
+}
+
+.tasks ,.git{
+    padding: 8.5px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.tasks{
+    background-color:rgba(238, 238, 65, 0.844);
+    transition: all 0.4s ease;
+    color: black;
+    &:hover{
+        background-color:rgb(252, 252, 4);
+        transform: scale(1.05);
+    }
+    
+}
+.git{
+    background-color:#0fbf3ed8;
+    transition: all 0.4s ease;
+    &:hover{
+        background-color: #0fbf3e;
+        transform: scale(1.05);
+    }
+}
+
+.project-card .title{
+    font-weight: 700;
+    letter-spacing: 1px;
+    
+}
+
+.date {
+    color:rgba(255, 255, 255, 0.842);
+    font-size: 13px;
+}
+
+.right h1{
+    color:#bb71f4
+}
+
+
+.left .desc{
+    margin: 15px auto;
+}
+
+.view-tasks{
+    text-align: left;
+}

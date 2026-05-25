@@ -1,0 +1,36 @@
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 0 1px 1px #434242a6;
+}
+
+.topbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding-right: 50px;
+}
+
+.topbar h2{
+    
+    padding-left: 45px;
+}
+
+.topbar h2 span{
+    color:#bb71f4;
+}
+
+ul a{
+    text-decoration: none;
+    transition: color 0.8s ease
+    border-bottom 0.8s ease;
+    font-size: 1.08rem;
+}
+
+ul a.active{
+    color: white;
+    border-bottom: 1px solid;
+
+}
