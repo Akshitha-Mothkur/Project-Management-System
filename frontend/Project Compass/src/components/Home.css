@@ -86,7 +86,12 @@
     font-weight: 600;
     border-radius: 5px;
 }
-
+.git a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
 .tasks{
     background-color:rgba(238, 238, 65, 0.844);
     transition: all 0.4s ease;

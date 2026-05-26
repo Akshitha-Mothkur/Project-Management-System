@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import './EditProject.css'
@@ -18,7 +18,7 @@ function AddProject() {
     const [techStack, setTechStack] = useState([])
     const [tasks, setTasks] = useState([])
     const [newTask, setnew]= useState({})
-   
+    const h2ref=useRef()
         function addTask(e){
             e.preventDefault()
             const updated=[...tasks, newTask]
@@ -51,10 +51,11 @@ function AddProject() {
 
             axios.post("http://localhost:3000/projects/newProject",newData )
             .then(()=>console.log("Added project"))
+            .then(()=>h2ref.current.innerText="Project Added")
         }
     return (
         <div className="project-edit">
-            <h2>Add New Project </h2>
+            <h2 ref={h2ref}>Add New Project </h2>
             <form action="">
                 <label>Id </label>
                 <input type="number" name="" id="" value={id} onChange={(e)=>setId(e.target.value)}/>
@@ -95,8 +96,6 @@ function AddProject() {
                     value={progress}
                     onChange={(e) => setProgress(e.target.value)}
                 />
-
-
 
                 <label>GitHub Link</label>
 

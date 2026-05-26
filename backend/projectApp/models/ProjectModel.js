@@ -21,7 +21,7 @@ const ProjectSchema = new mongoose.Schema({
     },
 
     tech_stack: [String],
-
+    progress: Number,
     status: {
         type: String,
         enum: ["Pending", "In Progress", "Completed", "Overdue"],

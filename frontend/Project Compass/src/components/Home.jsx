@@ -70,7 +70,7 @@ function Home() {
                                             }
 
                                         }}>View Tasks</button>
-                                        <button className="git">Git Hub</button>
+                                        <button className="git"><a href={data.github}>Git Hub</a></button>
                                         <Link to={`/editproject/${data._id}`}><FiEdit title="Edit project" /></Link>
                                     </div>
                                 </div>

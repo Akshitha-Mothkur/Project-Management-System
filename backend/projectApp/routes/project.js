@@ -33,4 +33,16 @@ projectRouter.delete('/delete/:id', async(req,res)=>{
     await Project.findByIdAndDelete(req.params.id)
     res.send("Project deleted")
 })
+
+projectRouter.get('/docsCount/total', async(req,res)=>{
+    const total= await Project.countDocuments()
+    res.json({"total":total})
+})
+projectRouter.get('/docsCount/inprogress', async(req,res)=>{
+    const inprogress= await Project.countDocuments({status:"In Progress"})
+    res.json({"inprogress":inprogress})
+})
+
+
+
 module.exports=projectRouter

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import './EditProject.css'
@@ -18,6 +18,8 @@ function EditProject() {
     const [techStack, setTechStack] = useState([])
     const [tasks, setTasks] = useState([])
     const [newTask, setnew]= useState({})
+
+    const h2ref=useRef()
     useEffect(() => {
         axios.get("http://localhost:3000/projects/" + id)
             .then((res) => {
@@ -44,9 +46,11 @@ function EditProject() {
             setTasks(updated)
             setnew({})
         }
-        function updateProject(){
-
+        function updateProject(e){
+            
+            e.preventDefault()
             const updatedData={
+                
                 title: title,
 
                 desc: desc,
@@ -68,11 +72,13 @@ function EditProject() {
             }
 
             axios.put("http://localhost:3000/projects/update/" + id,updatedData )
-            .then(()=>console.log("Updated project"))
+            .then((res)=>h2ref.current.innerText="Project Updated")
+
+            
         }
     return (
         <div className="project-edit">
-            <h2>Edit your Project Here</h2>
+            <h2 ref={h2ref}>Edit your Project Here</h2>
             <form action="">
                 <label htmlFor="">Title: </label>
                 <input type="text" name="" id="" value={title} onChange={(e) => setTitle(e.target.value)} />
