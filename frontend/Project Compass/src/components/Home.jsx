@@ -67,6 +67,7 @@ function Home() {
 
                                             else {
                                                 setOpenTaskId(data._id)
+                                                
                                             }
 
                                         }}>View Tasks</button>
@@ -85,9 +86,15 @@ function Home() {
                                     { openTaskId === data._id &&
                                         data.tasks.map((obj) => {
                                             return (
-                                                <h4>{obj.title}</h4>
+                                                <h4
+                                                    key={obj._id || obj.title}
+                                                    style={{ textDecoration: obj.completed ? "line-through" : "none",
+                                                        color: "whitesmoke", fontSize:16 , paddingLeft:40
+                                                     }}
+                                                >
+                                                    {obj.title}
+                                                </h4>
                                             )
-
                                         })
                                     }
                                 </div>

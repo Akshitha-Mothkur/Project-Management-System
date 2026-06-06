@@ -51,7 +51,15 @@ function AddProject() {
 
             axios.post("http://localhost:3000/projects/newProject",newData )
             .then(()=>console.log("Added project"))
-            .then(()=>h2ref.current.innerText="Project Added")
+            .then(()=>{
+                if (h2ref.current) {
+                    h2ref.current.innerText = "Project Added";
+                }
+                // scroll to top of the page so the user sees the update message
+                if (typeof window !== "undefined" && window.scrollTo) {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            })
         }
     return (
         <div className="project-edit">

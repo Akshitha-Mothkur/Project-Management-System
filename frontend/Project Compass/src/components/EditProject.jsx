@@ -72,7 +72,15 @@ function EditProject() {
             }
 
             axios.put("http://localhost:3000/projects/update/" + id,updatedData )
-            .then((res)=>h2ref.current.innerText="Project Updated")
+            .then((res) => {
+                if (h2ref.current) {
+                    h2ref.current.innerText = "Project Updated";
+                }
+                // scroll to top of the page so the user sees the update message
+                if (typeof window !== "undefined" && window.scrollTo) {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            })
 
             
         }

@@ -15,6 +15,14 @@ function Dashboard() {
         axios.get("http://localhost:3000/projects/docsCount/inprogress")
         .then(res => setProgress(res.data.inprogress))
     }, [])
+    useEffect(() => {
+        axios.get("http://localhost:3000/projects/docsCount/completed")
+        .then(res => setCompleted(res.data.completed))
+    }, [])
+    useEffect(() => {
+        axios.get("http://localhost:3000/projects/docsCount/overdue")
+        .then(res => setOverdue(res.data.overdue))
+    }, [])
     return (
         <>
             <div className="outer">

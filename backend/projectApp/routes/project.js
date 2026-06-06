@@ -42,6 +42,14 @@ projectRouter.get('/docsCount/inprogress', async(req,res)=>{
     const inprogress= await Project.countDocuments({status:"In Progress"})
     res.json({"inprogress":inprogress})
 })
+projectRouter.get('/docsCount/completed', async(req,res)=>{
+    const completed= await Project.countDocuments({status:"Completed"})
+    res.json({"completed":completed})
+})
+projectRouter.get('/docsCount/overdue', async(req,res)=>{
+    const overdue= await Project.countDocuments({status:"Overdue"})
+    res.json({"overdue":overdue})
+})
 
 
 
