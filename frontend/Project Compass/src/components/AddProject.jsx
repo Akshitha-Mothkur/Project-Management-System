@@ -19,12 +19,15 @@ function AddProject() {
     const [tasks, setTasks] = useState([])
     const [newTask, setnew]= useState({})
     const h2ref=useRef()
+
         function addTask(e){
             e.preventDefault()
             const updated=[...tasks, newTask]
             setTasks(updated)
             setnew({})
         }
+
+        
         function newProject(e){
             e.preventDefault()
             const newData={

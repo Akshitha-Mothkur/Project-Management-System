@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import './EditProject.css'
 import { MdAdd } from "react-icons/md";
-
+import { progressCalc } from "../utils/progressCalc";
 function EditProject() {
 
     const { id } = useParams()
@@ -49,6 +49,11 @@ function EditProject() {
         function updateProject(e){
             
             e.preventDefault()
+            const newProgress = progressCalc(tasks)
+            console.log("Progress: "+newProgress)
+            let newStatus= status
+            if (newProgress===100) newStatus="Completed"
+
             const updatedData={
                 
                 title: title,
@@ -59,11 +64,11 @@ function EditProject() {
 
                 tech_stack: techStack,
 
-                status: status,
+                status: newStatus,
 
                 tasks: tasks,
 
-                progress: progress,
+                progress: newProgress,
 
                 deadline: deadline,
 
@@ -118,14 +123,7 @@ function EditProject() {
 
 
 
-                <label>Progress</label>
-
-                <input
-                    type="number"
-                    value={progress}
-                    onChange={(e) => setProgress(e.target.value)}
-                />
-
+                
 
 
                 <label>GitHub Link</label>
